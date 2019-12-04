@@ -8,13 +8,11 @@
 import scrapy
 
 
-class TikiscrapyItem(scrapy.Item):
-    # define the fields for your item here like:
+class CouponItem(scrapy.Item):
+    id = scrapy.Field()
     title = scrapy.Field()
-    product_id = scrapy.Field()
-    data_id = scrapy.Field()
-    image = scrapy.Field()
-    final_price = scrapy.Field()
-    price_regular = scrapy.Field()
-    discount = scrapy.Field()
+    shop_name = scrapy.Field()
+    description = scrapy.Field()
+    date_end = scrapy.Field()
+    voucher = scrapy.Field()
     link = scrapy.Field()

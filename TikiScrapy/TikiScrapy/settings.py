@@ -70,8 +70,21 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'TikiScrapy.pipelines.TikiscrapyPipeline': 300,
+   # 'TikiScrapy.pipelines.TikiscrapyPipeline': 300,
+   'scrapy_mysql_pipeline.MySQLPipeline': 200,
 }
+
+
+MYSQL_HOST = 'localhost'
+MYSQL_PORT = 3306
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = ''
+MYSQL_DB = 'nhododb'
+MYSQL_TABLE = 'coupon'
+MYSQL_UPSERT = True
+MYSQL_RETRIES = 3
+MYSQL_CLOSE_ON_ERROR = True
+MYSQL_CHARSET = 'utf8'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
