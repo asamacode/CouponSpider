@@ -48,6 +48,7 @@ class CouponSpider(scrapy.Spider):
 
     def parse(self, response):
         urls = response.xpath('//div[@class="content-voucher"]/h3[@class="title clear"]//a/@href').extract()
+        category = response.xpath('//div[@class="mona-nh"]/a/text()').extract()
         for url in urls:
             url = response.urljoin(url)
             yield scrapy.Request(url=url, callback=self.parse_item)
